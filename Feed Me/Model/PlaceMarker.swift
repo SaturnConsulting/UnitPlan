@@ -34,8 +34,10 @@ import UIKit
 import GoogleMaps
 
 class PlaceMarker: GMSMarker {
+  // Add a property of type GooglePlace to the PlaceMarker
   let place: GooglePlace
   
+  // Declare a new designated initializer that accepts a GooglePlace as its sole parameter and fully initializes a PlaceMarker with a position, icon image, anchor for the marker’s position and an appearance animation
   init(place: GooglePlace) {
     self.place = place
     super.init()
