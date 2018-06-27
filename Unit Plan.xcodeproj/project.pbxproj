@@ -20,6 +20,7 @@
 		B48F649A19B22F9B00710BEB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F649719B22F9B00710BEB /* UIViewExtension.swift */; };
 		B48F649C19B22FA500710BEB /* TypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F649B19B22FA500710BEB /* TypesTableViewController.swift */; };
 		C1B6C15D20E366800049AA70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B6C15C20E366800049AA70 /* Foundation.framework */; };
+		C1CCFBDB20E376180007193C /* Franklin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C1CCFBDA20E376180007193C /* Franklin.gpx */; };
 		E107EBDE1FE1CBA100D29CE8 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107EBDD1FE1CBA100D29CE8 /* PlaceMarker.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		B48F649719B22F9B00710BEB /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B48F649B19B22FA500710BEB /* TypesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTableViewController.swift; sourceTree = "<group>"; };
 		C1B6C15C20E366800049AA70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C1CCFBDA20E376180007193C /* Franklin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Franklin.gpx; path = ../../../../Downloads/Franklin.gpx; sourceTree = "<group>"; };
 		E107EBDD1FE1CBA100D29CE8 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		B48F646B19B22EB200710BEB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C1CCFBDA20E376180007193C /* Franklin.gpx */,
 				B48F646C19B22EB200710BEB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,6 +215,7 @@
 				B48F647319B22EB200710BEB /* Main.storyboard in Resources */,
 				0E9DAE561BDA80A4009DA461 /* LaunchScreen.storyboard in Resources */,
 				B48F649919B22F9B00710BEB /* MarkerInfoView.xib in Resources */,
+				C1CCFBDB20E376180007193C /* Franklin.gpx in Resources */,
 				B48F647519B22EB200710BEB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saturnconsulting.unitplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
@@ -444,6 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saturnconsulting.unitplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
