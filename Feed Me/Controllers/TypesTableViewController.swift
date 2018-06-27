@@ -38,7 +38,7 @@ protocol TypesTableViewControllerDelegate: class {
 
 class TypesTableViewController: UITableViewController {
   
-  private let possibleTypesDictionary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant"]
+  private let possibleTypesDictionary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "units_plan":"Units Plan"]
   private var sortedKeys: [String] {
     return possibleTypesDictionary.keys.sorted()
   }
@@ -49,6 +49,7 @@ class TypesTableViewController: UITableViewController {
   
   // MARK: - Actions
   @IBAction func donePressed(_ sender: AnyObject) {
+    print(selectedTypes)
     delegate?.typesController(self, didSelectTypes: selectedTypes)
   }
   
