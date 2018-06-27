@@ -111,13 +111,76 @@ class MapViewController: UIViewController {
         // Set the marker’s map. This line of code is what tells the map to render the marker.
         marker.map = self.mapView
       }
+      
+      // MARK: UNIT PLANS
+      //
+      //
+      //
+      // add LMM Solutions office location as a (normal) google maps Red Pin
+      //
+      // refer developers.google.com/maps/documentation/ios-sdk/marker
+      //
+      let marker = GMSMarker()
+      marker.position = CLLocationCoordinate2D(latitude: -35.205422, longitude: 149.114447)
+      //marker.icon = GMSMarker.markerImage(with: .black)
+      //marker.iconView = false
+      marker.icon = UIImage(named: "lmm-pin")
+      marker.title = "LMM Solutions"
+      marker.snippet = "is awesome!"
+      marker.opacity = 0.6
+      
+      marker.isFlat = false
+      marker.appearAnimation = .pop
+      marker.map = self.mapView
     }
   }
   
   @IBAction func refreshPlaces(_ sender: Any) {
     fetchNearbyPlaces(coordinate: mapView.camera.target)
+
   }
 }
+
+// MARK: ADDRESS LOOKUP
+//func performGoogleSearch(for string: String) {
+//  string = nil
+//  tableView.reloadData()
+//
+//  var components = URLComponents(string: "https://maps.googleapis.com/maps/api/geocode/json")!
+//  let key = URLQueryItem(name: "key", value: "...") // use your key
+//  let address = URLQueryItem(name: "address", value: string)
+//  components.queryItems = [key, address]
+//
+//  let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
+//    guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+//      print(String(describing: response))
+//      print(String(describing: error))
+//      return
+//    }
+//
+//    guard let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+//      print("not JSON format expected")
+//      print(String(data: data, encoding: .utf8) ?? "Not string?!?")
+//      return
+//    }
+//
+//    guard let results = json["results"] as? [[String: Any]],
+//      let status = json["status"] as? String,
+//      status == "OK" else {
+//        print("no results")
+//        print(String(describing: json))
+//        return
+//    }
+//
+//    DispatchQueue.main.async {
+//      // now do something with the results, e.g. grab `formatted_address`:
+//      let strings = results.flatMap { $0["formatted_address"] as? String }
+//      ...
+//    }
+//  }
+//
+//  task.resume()
+//}
 
 // MARK: - TypesTableViewControllerDelegate
 extension MapViewController: TypesTableViewControllerDelegate {
@@ -160,6 +223,7 @@ extension MapViewController: CLLocationManagerDelegate {
   // viewing angles: 0 is straight down, 45 is about right.  However, angle will reset to 0 when locate button pressed.
   // zoom 5 is australia wide, 15 is suburb, 17 is street level, 20 is house
     mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 18, bearing: 0, viewingAngle: 45)
+    //mapView.mapType = kGMSTypeSatellite // is not available on Goole maps sdk for IOS
   
     // Tell locationManager you’re no longer interested in updates; you don’t want to follow a user around as their initial location is enough for you to work with.
     locationManager.stopUpdatingLocation()

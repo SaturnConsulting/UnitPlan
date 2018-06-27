@@ -49,6 +49,8 @@ class GooglePlace {
     name = json["name"].stringValue
     address = json["vicinity"].stringValue
     
+    print(json)
+    
     let lat = json["geometry"]["location"]["lat"].doubleValue as CLLocationDegrees
     let lng = json["geometry"]["location"]["lng"].doubleValue as CLLocationDegrees
     coordinate = CLLocationCoordinate2DMake(lat, lng)

@@ -5,5 +5,6 @@ use_frameworks!
 target 'Feed Me' do
 pod 'SwiftyJSON'
 pod 'GoogleMaps'
+pod 'Nominatim'
 end
 
