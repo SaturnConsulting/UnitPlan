@@ -28,7 +28,7 @@
 		15A76A998E5BC9094E04A519 /* Pods_Feed_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6504C8534735AC4D678E8A95 /* Pods-Feed Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed Me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feed Me/Pods-Feed Me.release.xcconfig"; sourceTree = "<group>"; };
 		79140D881E4BB696EB110D2C /* Pods-Feed Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feed Me/Pods-Feed Me.debug.xcconfig"; sourceTree = "<group>"; };
-		B48F646819B22EB200710BEB /* Feed Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feed Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B48F646819B22EB200710BEB /* Unit Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48F646C19B22EB200710BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B48F646D19B22EB200710BEB /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B48F647219B22EB200710BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		B48F646919B22EB200710BEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B48F646819B22EB200710BEB /* Feed Me.app */,
+				B48F646819B22EB200710BEB /* Unit Plan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B48F646719B22EB200710BEB /* Feed Me */ = {
+		B48F646719B22EB200710BEB /* Unit Plan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B48F648419B22EB200710BEB /* Build configuration list for PBXNativeTarget "Feed Me" */;
+			buildConfigurationList = B48F648419B22EB200710BEB /* Build configuration list for PBXNativeTarget "Unit Plan" */;
 			buildPhases = (
 				606B2440DF27CF36976B9B50 /* [CP] Check Pods Manifest.lock */,
 				B48F646419B22EB200710BEB /* Sources */,
@@ -164,9 +164,9 @@
 			);
 			dependencies = (
 			);
-			name = "Feed Me";
+			name = "Unit Plan";
 			productName = "Feed Me";
-			productReference = B48F646819B22EB200710BEB /* Feed Me.app */;
+			productReference = B48F646819B22EB200710BEB /* Unit Plan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B48F646319B22EB200710BEB /* Build configuration list for PBXProject "Feed Me" */;
+			buildConfigurationList = B48F646319B22EB200710BEB /* Build configuration list for PBXProject "Unit Plan" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,7 +199,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B48F646719B22EB200710BEB /* Feed Me */,
+				B48F646719B22EB200710BEB /* Unit Plan */,
 			);
 		};
 /* End PBXProject section */
@@ -420,7 +420,7 @@
 					"-framework",
 					"\"SwiftyJSON\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.feedme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturnconsulting.unitplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
@@ -441,7 +441,7 @@
 					"-framework",
 					"\"SwiftyJSON\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.feedme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturnconsulting.unitplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
@@ -451,7 +451,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B48F646319B22EB200710BEB /* Build configuration list for PBXProject "Feed Me" */ = {
+		B48F646319B22EB200710BEB /* Build configuration list for PBXProject "Unit Plan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B48F648219B22EB200710BEB /* Debug */,
@@ -460,7 +460,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B48F648419B22EB200710BEB /* Build configuration list for PBXNativeTarget "Feed Me" */ = {
+		B48F648419B22EB200710BEB /* Build configuration list for PBXNativeTarget "Unit Plan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B48F648519B22EB200710BEB /* Debug */,

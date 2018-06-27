@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Feed Me.xcodeproj">
+      location = "group:/Users/mupton/Documents/xcode/UnitPlan/Unit Plan.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
