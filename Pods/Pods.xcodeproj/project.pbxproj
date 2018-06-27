@@ -10,8 +10,6 @@
 		2315AF3F44BC593F37C520965157586B /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B98AF5809EF121B1BBB2810BF5FA7E /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CBFE8668A4AE7A4FBE649775815F91E /* Pods-Feed Me-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FE8A133001579AE01D7435EF2AE83AF /* Pods-Feed Me-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F74FF20F2953776487D225AA702EBEE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694219428A0D2A9F12572807A116D6C /* SwiftyJSON.swift */; };
-		669EB9B0967A37B7515D578E668F4719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		69D0E7A97DDC1FCDE3E11F45FF444361 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		72A12EF08C5EE1242012DB3A61422C7B /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA7866F019A5BB7BDE6D50E61F630FD /* SwiftyJSON-dummy.m */; };
 		7BF5DF4355466FCF8F8B6F42D2D490E2 /* Pods-Feed Me-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C6698103FEA9A3E9B8DD50C32FBC64 /* Pods-Feed Me-dummy.m */; };
 /* End PBXBuildFile section */
@@ -36,18 +34,18 @@
 		25D8154CBE7305AAF234DFDCB28685A1 /* Pods-Feed Me-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Feed Me-acknowledgements.plist"; sourceTree = "<group>"; };
 		40E9542177A196969C04BBBF8F4D45BE /* Pods-Feed Me-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Feed Me-acknowledgements.markdown"; sourceTree = "<group>"; };
 		57D569DE8707D3AFE56528FA87EE89D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6B0355863493C4B62FE4D2EA575EE239 /* Pods_Feed_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Feed_Me.framework; path = "Pods-Feed Me.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0355863493C4B62FE4D2EA575EE239 /* Pods_Feed_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2E7BCDF79F5B4536B86C3F803738EC /* Pods-Feed Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Feed Me.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC39772A0F651AE4EDFFE91F07ED26B /* Pods-Feed Me.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Feed Me.modulemap"; sourceTree = "<group>"; };
 		7FE8A133001579AE01D7435EF2AE83AF /* Pods-Feed Me-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Feed Me-umbrella.h"; sourceTree = "<group>"; };
 		879522222AD1481E29AC630722EE6E53 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		87ECBB7592A9EC90FF2CE380F8286AB7 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		8EA7866F019A5BB7BDE6D50E61F630FD /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		971269FF73007698E10A11F065FA1B87 /* Pods-Feed Me-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Feed Me-frameworks.sh"; sourceTree = "<group>"; };
 		A694219428A0D2A9F12572807A116D6C /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		B218A01002B5A661E67EF09FD222E952 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B218A01002B5A661E67EF09FD222E952 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1B6C15E20E3676C0049AA70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CB09347BE9438EB130F5CCF249DA71EB /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		D8CBBFCC901349DB7E0BA1FCFED7A535 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		E2C6698103FEA9A3E9B8DD50C32FBC64 /* Pods-Feed Me-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Feed Me-dummy.m"; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69D0E7A97DDC1FCDE3E11F45FF444361 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				669EB9B0967A37B7515D578E668F4719 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,17 +94,17 @@
 				BCF5E35DA1E58B03D48C515EE0BDA60E /* Base */,
 				666C218C6447D5A5AA8E83AC568075AF /* Maps */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+				C1B6C15E20E3676C0049AA70 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
+			path = ../../../../../../../../../Users/mupton/Documents/xcode/UnitPlan/Pods;
+			sourceTree = SDKROOT;
 		};
 		666C218C6447D5A5AA8E83AC568075AF /* Maps */ = {
 			isa = PBXGroup;
@@ -144,7 +140,6 @@
 				A694219428A0D2A9F12572807A116D6C /* SwiftyJSON.swift */,
 				B6A86E48A34A88A2E94DA4F0C3102156 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -176,7 +171,8 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
+			path = ../../../../../../../../../Users/mupton/Documents/xcode/UnitPlan/Pods;
+			sourceTree = SDKROOT;
 		};
 		BCF5E35DA1E58B03D48C515EE0BDA60E /* Base */ = {
 			isa = PBXGroup;

@@ -19,6 +19,7 @@
 		B48F649919B22F9B00710BEB /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48F649619B22F9B00710BEB /* MarkerInfoView.xib */; };
 		B48F649A19B22F9B00710BEB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F649719B22F9B00710BEB /* UIViewExtension.swift */; };
 		B48F649C19B22FA500710BEB /* TypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F649B19B22FA500710BEB /* TypesTableViewController.swift */; };
+		C1B6C15D20E366800049AA70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B6C15C20E366800049AA70 /* Foundation.framework */; };
 		E107EBDE1FE1CBA100D29CE8 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107EBDD1FE1CBA100D29CE8 /* PlaceMarker.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		B48F649619B22F9B00710BEB /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		B48F649719B22F9B00710BEB /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B48F649B19B22FA500710BEB /* TypesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTableViewController.swift; sourceTree = "<group>"; };
+		C1B6C15C20E366800049AA70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E107EBDD1FE1CBA100D29CE8 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B6C15D20E366800049AA70 /* Foundation.framework in Frameworks */,
 				461E8D992A720145A9E20338 /* Pods_Feed_Me.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,10 +131,11 @@
 		B48F649D19B231D500710BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1B6C15C20E366800049AA70 /* Foundation.framework */,
 				15A76A998E5BC9094E04A519 /* Pods_Feed_Me.framework */,
 			);
 			path = Frameworks;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		FAEABCE5C3556E0EA82AC713 /* Pods */ = {
 			isa = PBXGroup;
