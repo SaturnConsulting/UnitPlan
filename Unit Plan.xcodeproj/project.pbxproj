@@ -64,7 +64,7 @@
 		B48F645F19B22EB200710BEB = {
 			isa = PBXGroup;
 			children = (
-				B48F646A19B22EB200710BEB /* Feed Me */,
+				B48F646A19B22EB200710BEB /* Unit Plan */,
 				B48F646919B22EB200710BEB /* Products */,
 				B48F649D19B231D500710BEB /* Frameworks */,
 				FAEABCE5C3556E0EA82AC713 /* Pods */,
@@ -80,7 +80,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B48F646A19B22EB200710BEB /* Feed Me */ = {
+		B48F646A19B22EB200710BEB /* Unit Plan */ = {
 			isa = PBXGroup;
 			children = (
 				B48F646D19B22EB200710BEB /* AppDelegate.swift */,
@@ -92,7 +92,7 @@
 				B48F647419B22EB200710BEB /* Images.xcassets */,
 				B48F646B19B22EB200710BEB /* Supporting Files */,
 			);
-			path = "Feed Me";
+			path = "Unit Plan";
 			sourceTree = "<group>";
 		};
 		B48F646B19B22EB200710BEB /* Supporting Files */ = {
@@ -421,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = RW5EV7X87J;
-				INFOPLIST_FILE = "Feed Me/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Unit Plan/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -443,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = RW5EV7X87J;
-				INFOPLIST_FILE = "Feed Me/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Unit Plan/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

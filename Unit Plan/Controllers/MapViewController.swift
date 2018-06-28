@@ -135,6 +135,26 @@ class MapViewController: UIViewController {
     }
   }
   
+  // MARK LOOKUP ADDRESS - NEEDS ALAMOFIRE BUT NEEDS REWRITE
+//  func getAddress(address:String){
+//    
+//    let key : String = "YOUR_GOOGLE_API_KEY"
+//    let postParameters:[String: Any] = [ "address": address,"key":key]
+//    let url : String = "https://maps.googleapis.com/maps/api/geocode/json"
+//    
+//    Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: nil).responseJSON {  response in
+//      
+//      if let receivedResults = response.result.value
+//      {
+//        let resultParams = JSON(receivedResults)
+//        print(resultParams) // RESULT JSON
+//        print(resultParams["status"]) // OK, ERROR
+//        print(resultParams["results"][0]["geometry"]["location"]["lat"].doubleValue) // approximately latitude
+//        print(resultParams["results"][0]["geometry"]["location"]["lng"].doubleValue) // approximately longitude
+//      }
+//    }
+//  }
+
   @IBAction func refreshPlaces(_ sender: Any) {
     fetchNearbyPlaces(coordinate: mapView.camera.target)
 

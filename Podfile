@@ -2,9 +2,8 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'Feed Me' do
+target 'Unit Plan' do
 pod 'SwiftyJSON'
 pod 'GoogleMaps'
-pod 'Nominatim'
 end
 
