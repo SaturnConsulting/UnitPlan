@@ -46,6 +46,10 @@ class GoogleDataProvider {
   }
 
   func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: @escaping PlacesCompletion) -> Void {
+    //getAddress(address: "13 Ettrick Street CRACE ACT 2911")
+    // need to have GEOCODING API enabled in Google Developer Portal for the Api Key
+    performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
+    
     var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true&key=\(googleApiKey)"
     let typesString = types.count > 0 ? types.joined(separator: "|") : "food"
     urlString += "&types=\(typesString)"
@@ -87,10 +91,81 @@ class GoogleDataProvider {
         }
       }
     }
+
     placesTask?.resume()
   }
   
+  // MARK: lookup address trial
+  // API key must be activated with GeoCoding API on Google Developer portal and format of the request looks like this:
+  // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
   
+  func performGoogleSearch(for address: String) {
+    let siteurl = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    let url = siteurl + address + "&key=" + googleApiKey
+    print(url)
+    
+//    let strings: String = ""
+//    tableView.reloadData()
+//    var components = URLComponents(string: "https://maps.googleapis.com/maps/api/geocode/json")!
+//    let key = URLQueryItem(name: "key", value: googleApiKey)
+//    let address = URLQueryItem(name: "address", value: address)
+//    print("Components: \(components)")
+//    print("Key: \(key)")
+//    print("Address: \(address)")
+//    let url = components + address + key
+//    print("url: "\(url)")
+//    components.queryItems = [key, address]
+//
+//    let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
+//      guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+//        print(String(describing: response))
+//        print(String(describing: error))
+//        return
+//      }
+//      guard let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+//        print("not JSON format expected")
+//        print(String(data: data, encoding: .utf8) ?? "Not string?!?")
+//        return
+//      }
+//      guard let results = json["results"] as? [[String: Any]],
+//        let status = json["status"] as? String,
+//        status == "OK" else {
+//          print("no results")
+//          print(String(describing: json))
+//          return
+//      }
+//      print("json: \(json)")
+//      DispatchQueue.main.async {
+//        // now do something with the results, e.g. grab `formatted_address`:
+//        let strings = results.compactMap { $0["formatted_address"] as? String }
+//        }
+//      //task.resume()
+//    }
+//    print("strings: \(strings)")
+//
+  }
+  
+  // MARK: LOOKUP ADDRESS
+  func getAddress(address:String){
+      let postParameters:[String: Any] = [ "address": address,"key":googleApiKey]
+      let urlString : String = "https://maps.googleapis.com/maps/api/geocode/json"
+      print(postParameters)
+      print(urlString)
+      print(address)
+    
+  //    Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: nil).responseJSON {  response in
+  //
+  //      if let receivedResults = response.result.value
+  //      {
+  //        let resultParams = JSON(receivedResults)
+  //        print(resultParams) // RESULT JSON
+  //        print(resultParams["status"]) // OK, ERROR
+  //        print(resultParams["results"][0]["geometry"]["location"]["lat"].doubleValue) // approximately latitude
+  //        print(resultParams["results"][0]["geometry"]["location"]["lng"].doubleValue) // approximately longitude
+  //      }
+  //    }
+  }
+
   func fetchPhotoFromReference(_ reference: String, completion: @escaping PhotoCompletion) -> Void {
     if let photo = photoCache[reference] {
       completion(photo)

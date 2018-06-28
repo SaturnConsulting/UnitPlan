@@ -49,7 +49,7 @@ class GooglePlace {
     name = json["name"].stringValue
     address = json["vicinity"].stringValue
     
-    print(json)
+    //print(json)
     
     let lat = json["geometry"]["location"]["lat"].doubleValue as CLLocationDegrees
     let lng = json["geometry"]["location"]["lng"].doubleValue as CLLocationDegrees
