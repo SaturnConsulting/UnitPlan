@@ -111,6 +111,7 @@ class MapViewController: UIViewController {
         // Set the marker’s map. This line of code is what tells the map to render the marker.
         marker.map = self.mapView
       }
+      self.dataProvider.performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
       
       // MARK: UNIT PLANS
       //
@@ -249,6 +250,7 @@ extension MapViewController: CLLocationManagerDelegate {
     locationManager.stopUpdatingLocation()
     // user can reasonably expect to see places nearby when the app launches.
     fetchNearbyPlaces(coordinate: location.coordinate)
+  
   }
 }
 

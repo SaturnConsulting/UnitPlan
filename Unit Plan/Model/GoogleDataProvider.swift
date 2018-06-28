@@ -48,7 +48,7 @@ class GoogleDataProvider {
   func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: @escaping PlacesCompletion) -> Void {
     //getAddress(address: "13 Ettrick Street CRACE ACT 2911")
     // need to have GEOCODING API enabled in Google Developer Portal for the Api Key
-    performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
+    //performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
     
     var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true&key=\(googleApiKey)"
     let typesString = types.count > 0 ? types.joined(separator: "|") : "food"
@@ -143,27 +143,6 @@ class GoogleDataProvider {
 //    }
 //    print("strings: \(strings)")
 //
-  }
-  
-  // MARK: LOOKUP ADDRESS
-  func getAddress(address:String){
-      let postParameters:[String: Any] = [ "address": address,"key":googleApiKey]
-      let urlString : String = "https://maps.googleapis.com/maps/api/geocode/json"
-      print(postParameters)
-      print(urlString)
-      print(address)
-    
-  //    Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: nil).responseJSON {  response in
-  //
-  //      if let receivedResults = response.result.value
-  //      {
-  //        let resultParams = JSON(receivedResults)
-  //        print(resultParams) // RESULT JSON
-  //        print(resultParams["status"]) // OK, ERROR
-  //        print(resultParams["results"][0]["geometry"]["location"]["lat"].doubleValue) // approximately latitude
-  //        print(resultParams["results"][0]["geometry"]["location"]["lng"].doubleValue) // approximately longitude
-  //      }
-  //    }
   }
 
   func fetchPhotoFromReference(_ reference: String, completion: @escaping PhotoCompletion) -> Void {
