@@ -41,14 +41,12 @@ typealias PhotoCompletion = (UIImage?) -> Void
 class GoogleDataProvider {
   private var photoCache: [String: UIImage] = [:]
   private var placesTask: URLSessionDataTask?
+  private var placesTask2: URLSessionDataTask?
   private var session: URLSession {
     return URLSession.shared
   }
-
+  
   func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: @escaping PlacesCompletion) -> Void {
-    //getAddress(address: "13 Ettrick Street CRACE ACT 2911")
-    // need to have GEOCODING API enabled in Google Developer Portal for the Api Key
-    //performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
     
     var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true&key=\(googleApiKey)"
     let typesString = types.count > 0 ? types.joined(separator: "|") : "food"
@@ -91,60 +89,9 @@ class GoogleDataProvider {
         }
       }
     }
-
     placesTask?.resume()
   }
   
-  // MARK: lookup address trial
-  // API key must be activated with GeoCoding API on Google Developer portal and format of the request looks like this:
-  // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-  
-  func performGoogleSearch(for address: String) {
-    let siteurl = "https://maps.googleapis.com/maps/api/geocode/json?address="
-    let url = siteurl + address + "&key=" + googleApiKey
-    print(url)
-    
-//    let strings: String = ""
-//    tableView.reloadData()
-//    var components = URLComponents(string: "https://maps.googleapis.com/maps/api/geocode/json")!
-//    let key = URLQueryItem(name: "key", value: googleApiKey)
-//    let address = URLQueryItem(name: "address", value: address)
-//    print("Components: \(components)")
-//    print("Key: \(key)")
-//    print("Address: \(address)")
-//    let url = components + address + key
-//    print("url: "\(url)")
-//    components.queryItems = [key, address]
-//
-//    let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
-//      guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
-//        print(String(describing: response))
-//        print(String(describing: error))
-//        return
-//      }
-//      guard let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-//        print("not JSON format expected")
-//        print(String(data: data, encoding: .utf8) ?? "Not string?!?")
-//        return
-//      }
-//      guard let results = json["results"] as? [[String: Any]],
-//        let status = json["status"] as? String,
-//        status == "OK" else {
-//          print("no results")
-//          print(String(describing: json))
-//          return
-//      }
-//      print("json: \(json)")
-//      DispatchQueue.main.async {
-//        // now do something with the results, e.g. grab `formatted_address`:
-//        let strings = results.compactMap { $0["formatted_address"] as? String }
-//        }
-//      //task.resume()
-//    }
-//    print("strings: \(strings)")
-//
-  }
-
   func fetchPhotoFromReference(_ reference: String, completion: @escaping PhotoCompletion) -> Void {
     if let photo = photoCache[reference] {
       completion(photo)
@@ -175,8 +122,86 @@ class GoogleDataProvider {
         }
         downloadedPhoto = UIImage(data: imageData)
         self.photoCache[reference] = downloadedPhoto
-      }
+        }
         .resume()
     }
   }
+  
+  // MARK: lookup address trial
+  // API key must be activated with GeoCoding API on Google Developer portal and format of the request looks like this:
+  
+  // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+  
+  func performGoogleSearch(_ address: String) -> Void { //}, completion: @escaping PlacesCompletion) -> Void {
+    //performGoogleSearch("9+Fingal+Street+CRACE+ACT+2911")
+    let siteurl = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    let urlString = siteurl + address + "&key=" + googleApiKey
+    print(urlString)
+    
+    guard let url = URL(string: urlString) else {
+      // completion([])
+      print("Guard let fail")
+      return
+    }
+    print(url)
+    
+    if let task = placesTask2, task.taskIdentifier > 0 && task.state == .running {
+      print("task.cancel")
+      task.cancel()
+    }
+    
+    DispatchQueue.main.async {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+      print("DispatchQueue...")
+    }
+    
+    let temptask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+      if error != nil {
+        print("JSON Error")
+      } else {
+        if let content = data {
+          do
+          {
+            // now convert json to string
+            let myJson = try JSONSerialization.jsonObject(with: content, options:
+              JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+            //print(myJson)
+            // refer https://developers.google.com/maps/documentation/geocoding/intro
+            
+            // if let results = myJson["results"] as? [[String: Any]] {
+            if let results = myJson["results"] as? NSArray {
+              print(results.count) // array of 1 set of results
+              let geometry = results.value(forKey: "geometry")
+              print("geometry: \(geometry)")
+              print(type(of: geometry)) // it's an NSSingleObjectArrayI
+              
+              //let lat = [geometry, objectAtIndex:1]
+              //print("lat:\(lat)")
+              //print("results:\(results)")
+            } else
+            {
+              print("error parsing JSON as String")
+            }
+          }
+          catch
+          {
+            // if json conversion to array doesn't work
+          }
+        }
+      }
+    }
+    temptask.resume()
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+

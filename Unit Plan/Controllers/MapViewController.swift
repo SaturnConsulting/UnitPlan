@@ -111,7 +111,7 @@ class MapViewController: UIViewController {
         // Set the marker’s map. This line of code is what tells the map to render the marker.
         marker.map = self.mapView
       }
-      self.dataProvider.performGoogleSearch(for: "9+Fingal+Street+CRACE+ACT+2911")
+      self.dataProvider.performGoogleSearch("9+Fingal+Street+CRACE+ACT+2911")
       
       // MARK: UNIT PLANS
       //
