@@ -45,6 +45,7 @@
 		C1B6C15C20E366800049AA70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C1CCFBDA20E376180007193C /* Franklin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Franklin.gpx; path = ../../../../Downloads/Franklin.gpx; sourceTree = "<group>"; };
 		C1CCFBDC20E3C71A0007193C /* Crace.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Crace.gpx; path = ../../../../Downloads/Crace.gpx; sourceTree = "<group>"; };
+		C1FE8ACE20E65F8C004631C7 /* UnitPlan.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UnitPlan.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E107EBDD1FE1CBA100D29CE8 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +84,7 @@
 		B48F646A19B22EB200710BEB /* Unit Plan */ = {
 			isa = PBXGroup;
 			children = (
+				C1FE8ACE20E65F8C004631C7 /* UnitPlan.playground */,
 				B48F646D19B22EB200710BEB /* AppDelegate.swift */,
 				B48F648A19B22EFC00710BEB /* Controllers */,
 				B48F648B19B22F0600710BEB /* Model */,

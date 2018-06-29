@@ -38,7 +38,8 @@ protocol TypesTableViewControllerDelegate: class {
 
 class TypesTableViewController: UITableViewController {
   
-  private let possibleTypesDictionary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "units_plan":"Units Plan"]
+  private let possibleTypesDictionary = ["units_plan":"Units Plan"]
+//  private let possibleTypesDictionary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "units_plan":"Units Plan"]
   private var sortedKeys: [String] {
     return possibleTypesDictionary.keys.sorted()
   }

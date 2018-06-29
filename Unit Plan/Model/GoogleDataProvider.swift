@@ -49,7 +49,7 @@ class GoogleDataProvider {
   func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: @escaping PlacesCompletion) -> Void {
     
     var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true&key=\(googleApiKey)"
-    let typesString = types.count > 0 ? types.joined(separator: "|") : "food"
+    let typesString = types.count > 0 ? types.joined(separator: "|") : ""//"food"
     urlString += "&types=\(typesString)"
     urlString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? urlString
     
@@ -127,7 +127,7 @@ class GoogleDataProvider {
     }
   }
   
-  // MARK: lookup address trial
+  // MARK: lookup address trial - given up in favour of hardcoded LAT/LONG kept in onboard data.
   // API key must be activated with GeoCoding API on Google Developer portal and format of the request looks like this:
   
   // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
@@ -173,9 +173,11 @@ class GoogleDataProvider {
               print(results.count) // array of 1 set of results
               let geometry = results.value(forKey: "geometry")
               print("geometry: \(geometry)")
-              print(type(of: geometry)) // it's an NSSingleObjectArrayI
+              //let location = geometry.value(forKey: "location")
+              //print("location: \(location)")
               
-              //let lat = [geometry, objectAtIndex:1]
+              print(type(of: geometry)) // it's a __NSSingleObjectArrayI
+              //let lat = [geometry, objectAtIndex:0]
               //print("lat:\(lat)")
               //print("results:\(results)")
             } else
