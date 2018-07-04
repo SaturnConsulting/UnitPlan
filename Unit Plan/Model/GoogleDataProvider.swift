@@ -126,77 +126,74 @@ class GoogleDataProvider {
         .resume()
     }
   }
-  
+}
   // MARK: lookup address trial - given up in favour of hardcoded LAT/LONG kept in onboard data.
   // API key must be activated with GeoCoding API on Google Developer portal and format of the request looks like this:
   
-  // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-  
-  func performGoogleSearch(_ address: String) -> Void { //}, completion: @escaping PlacesCompletion) -> Void {
-    //performGoogleSearch("9+Fingal+Street+CRACE+ACT+2911")
-    let siteurl = "https://maps.googleapis.com/maps/api/geocode/json?address="
-    let urlString = siteurl + address + "&key=" + googleApiKey
-    print(urlString)
-    
-    guard let url = URL(string: urlString) else {
-      // completion([])
-      print("Guard let fail")
-      return
-    }
-    print(url)
-    
-    if let task = placesTask2, task.taskIdentifier > 0 && task.state == .running {
-      print("task.cancel")
-      task.cancel()
-    }
-    
-    DispatchQueue.main.async {
-      UIApplication.shared.isNetworkActivityIndicatorVisible = true
-      print("DispatchQueue...")
-    }
-    
-    let temptask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-      if error != nil {
-        print("JSON Error")
-      } else {
-        if let content = data {
-          do
-          {
-            // now convert json to string
-            let myJson = try JSONSerialization.jsonObject(with: content, options:
-              JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-            //print(myJson)
-            // refer https://developers.google.com/maps/documentation/geocoding/intro
-            
-            // if let results = myJson["results"] as? [[String: Any]] {
-            if let results = myJson["results"] as? NSArray {
-              print(results.count) // array of 1 set of results
-              let geometry = results.value(forKey: "geometry")
-              print("geometry: \(geometry)")
-              //let location = geometry.value(forKey: "location")
-              //print("location: \(location)")
-              
-              print(type(of: geometry)) // it's a __NSSingleObjectArrayI
-              //let lat = [geometry, objectAtIndex:0]
-              //print("lat:\(lat)")
-              //print("results:\(results)")
-            } else
-            {
-              print("error parsing JSON as String")
-            }
-          }
-          catch
-          {
-            // if json conversion to array doesn't work
-          }
-        }
-      }
-    }
-    temptask.resume()
-  }
-}
-
-
+//  // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+//
+//  func performGoogleSearch(_ address: String) -> Void { //}, completion: @escaping PlacesCompletion) -> Void {
+//    //performGoogleSearch("9+Fingal+Street+CRACE+ACT+2911")
+//    let siteurl = "https://maps.googleapis.com/maps/api/geocode/json?address="
+//    let urlString = siteurl + address + "&key=" + googleApiKey
+//    print(urlString)
+//
+//    guard let url = URL(string: urlString) else {
+//      // completion([])
+//      print("Guard let fail")
+//      return
+//    }
+//    print(url)
+//
+//    if let task = placesTask2, task.taskIdentifier > 0 && task.state == .running {
+//      print("task.cancel")
+//      task.cancel()
+//    }
+//
+//    DispatchQueue.main.async {
+//      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//      print("DispatchQueue...")
+//    }
+//
+//    let temptask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//      if error != nil {
+//        print("JSON Error")
+//      } else {
+//        if let content = data {
+//          do
+//          {
+//            // now convert json to string
+//            let myJson = try JSONSerialization.jsonObject(with: content, options:
+//              JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+//            //print(myJson)
+//            // refer https://developers.google.com/maps/documentation/geocoding/intro
+//
+//            // if let results = myJson["results"] as? [[String: Any]] {
+//            if let results = myJson["results"] as? NSArray {
+//              print(results.count) // array of 1 set of results
+//              let geometry = results.value(forKey: "geometry")
+//              print("geometry: \(geometry)")
+//              //let location = geometry.value(forKey: "location")
+//              //print("location: \(location)")
+//
+//              print(type(of: geometry)) // it's a __NSSingleObjectArrayI
+//              //let lat = [geometry, objectAtIndex:0]
+//              //print("lat:\(lat)")
+//              //print("results:\(results)")
+//            } else
+//            {
+//              print("error parsing JSON as String")
+//            }
+//          }
+//          catch
+//          {
+//            // if json conversion to array doesn't work
+//          }
+//        }
+//      }
+//    }
+//    temptask.resume()
+//  }
 
 
 
